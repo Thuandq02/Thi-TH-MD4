@@ -17,13 +17,12 @@
             <tbody>
             <tr *ngFor="let book of books; let i = index">
               <td>{{i + 1}}</td>
-              <td>{{book.title}}</td>
+              <td><a (click)="bookDetail(book.id)">{{book.title}}</a></td>
               <td>{{book.author}}</td>
               <td>
                 <a routerLink="edit/{{book.id}}" class="btn btn-primary">Edit</a>
                 <a (click)="deleteBook(book.id)" class="btn btn-danger"
                    onclick="return confirm('Bạn chắc chắn muốn xóa chứ?')">Delete</a>
-                <a (click)="bookDetail(book.id)" class="btn btn-info">Details</a>
               </td>
             </tr>
             </tbody>
